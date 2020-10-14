@@ -1,19 +1,15 @@
 module.exports = {
-  env: {
-    browser: true,
-    es2021: true,
-  },
   extends: ["plugin:react/recommended", "airbnb"],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
     },
-    ecmaVersion: 12,
+    ecmaVersion: 2018,
     sourceType: "module",
   },
   plugins: ["react", "prettier"],
   rules: {
-    "no-console": "warn",
+    "no-console": "off",
     semi: ["error", "always"],
     quotes: ["error", "double"],
     "react/jsx-filename-extension": "off",
