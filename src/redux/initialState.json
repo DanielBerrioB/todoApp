@@ -1,22 +1,3 @@
 {
-  "toDoList": [
-    {
-      "id": 1,
-      "name": "Tarea 1",
-      "description": "Description tarea 1",
-      "creationDate": "12/09/2020"
-    },
-    {
-      "id": 2,
-      "name": "Tarea 1",
-      "description": "Description tarea 1",
-      "creationDate": "12/09/2020"
-    },
-    {
-      "id": 3,
-      "name": "Tarea 1",
-      "description": "Description tarea 1",
-      "creationDate": "12/09/2020"
-    }
-  ]
+  "toDoList": []
 }

@@ -1,10 +1,4 @@
-const topOptionsStyles = (theme) => ({
-  container: {
-    margin: "0 auto",
-    maxWidth: "500px",
-    textAlign: "center",
-    display: "flex",
-  },
+const modalStyles = (theme) => ({
   inputStyle: {
     width: "80%",
     marginBottom: "10px",
@@ -14,7 +8,7 @@ const topOptionsStyles = (theme) => ({
     width: "80%",
     textAlign: "center",
     backgroundColor: theme.palette.background.paper,
-    border: "2px solid #000",
+    border: "2px solid white",
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
     top: `50%`,
@@ -23,4 +17,4 @@ const topOptionsStyles = (theme) => ({
   },
 });
 
-export default topOptionsStyles;
+export default modalStyles;

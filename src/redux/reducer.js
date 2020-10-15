@@ -1,10 +1,9 @@
-import initialState from "./initialState.json";
-import actions from "./actions";
+import actions from "./actionsName";
 
-export default (state = initialState.toDoList, action) => {
+export default (state = [], action) => {
   switch (action.type) {
     case actions.ADD_TASK:
-      return state.push(action.payload);
+      return [...state, action.payload];
     case actions.UPDATE_TASK:
       const element = state.find((e) => e.id === action.payload);
       const newState = state;

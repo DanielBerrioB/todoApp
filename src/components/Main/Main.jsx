@@ -3,7 +3,6 @@ import { withStyles } from "@material-ui/core";
 import styles from "./Main.styles";
 import TopOptions from "../TopOptions/TopOptions";
 import Task from "../Tasks/Task";
-import { connect } from "react-redux";
 
 const Main = ({ classes }) => {
   return (

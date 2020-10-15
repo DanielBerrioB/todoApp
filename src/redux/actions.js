@@ -1,9 +1,10 @@
-const ADD_TASK = "ADD_TASK";
-const UPDATE_TASK = "UPDATE_TASK";
-const REMOVE_TASK = "REMOVE_TASK";
+import actions from "./actionsName";
+
+const addTask = (element) => ({
+  type: actions.ADD_TASK,
+  payload: element,
+});
 
 export default {
-  ADD_TASK,
-  UPDATE_TASK,
-  REMOVE_TASK,
+  addTask,
 };
