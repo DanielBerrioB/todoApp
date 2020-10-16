@@ -5,9 +5,7 @@ import { useSelector } from "react-redux";
 
 const DashBoard = ({ classes }) => {
   const items = useSelector((state) => state.toDoList);
-  var completed;
-  var deleted;
-  var uncompleted;
+  var completed, deleted, uncompleted;
   if (items) {
     completed = items.filter((e) => e.isCompleted).length;
     deleted = items.filter((e) => e.isDeleted).length;
@@ -16,6 +14,7 @@ const DashBoard = ({ classes }) => {
 
   return (
     <div className={classes.mainContainer}>
+      <h4 className={classes.titles}>Total: {items.length}</h4>
       <h4 className={`${classes.titles} ${classes.completed}`}>
         Completed: {completed}
       </h4>
