@@ -1,4 +1,4 @@
-const dashBoardStyles = (theme) => ({
+const dashBoardStyles = () => ({
   mainContainer: {
     display: "flex",
     justifyContent: "center",

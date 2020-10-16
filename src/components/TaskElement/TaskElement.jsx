@@ -77,6 +77,7 @@ const TaskElement = (props) => {
           textDecoration: props.element.isCompleted ? "line-through" : "",
         }}
         actionIcon={
+          !props.element.isCompleted &&
           !props.element.isDeleted && (
             <div>
               <IconButton
@@ -107,12 +108,12 @@ const TaskElement = (props) => {
               <EditIcon />
               <p className={props.classes.textSpace}>Edit</p>
             </MenuItem>
+            <MenuItem onClick={() => removeTask(props.element)}>
+              <DeleteIcon />
+              <p className={props.classes.textSpace}>Delete</p>
+            </MenuItem>
           </div>
         )}
-        <MenuItem onClick={() => removeTask(props.element)}>
-          <DeleteIcon />
-          <p className={props.classes.textSpace}>Delete</p>
-        </MenuItem>
       </Menu>
     </GridListTile>
   );

@@ -3,11 +3,11 @@ import actions from "./actionsName";
 export default (state = [], action) => {
   switch (action.type) {
     case actions.ADD_TASK:
-      let searchItems = [...state.search.items];
+      const searchItems = [...state.search.items];
       searchItems.push(action.payload);
       return {
         toDoList: [...state.toDoList, action.payload],
-        search: { items: searchItems, isSearch: state.search.isSearch },
+        search: { items: searchItems },
       };
     case actions.UPDATE_TASK:
       const { previous } = action.payload;
@@ -21,7 +21,7 @@ export default (state = [], action) => {
       }
       return {
         toDoList: newStateUpdate,
-        search: { items: copyStateUpdate, isSearch: state.search.isSearch },
+        search: { items: copyStateUpdate },
       };
     case actions.REMOVE_TASK:
       const newSearchItems = state.search.items.filter(
@@ -32,7 +32,7 @@ export default (state = [], action) => {
       );
       return {
         toDoList: toDoElements,
-        search: { items: newSearchItems, isSearch: state.search.isSearch },
+        search: { items: newSearchItems },
       };
     case actions.CHECK_TASK:
       const checkElement = state.toDoList.find(
@@ -52,7 +52,7 @@ export default (state = [], action) => {
       });
       return {
         toDoList: copyState,
-        search: { items: copySearch, isSearch: state.search.isSearch },
+        search: { items: copySearch },
       };
     case actions.SEARCH:
       const targetText = action.payload.targetText.toLowerCase();
@@ -79,7 +79,6 @@ export default (state = [], action) => {
         toDoList: state.toDoList,
         search: {
           items: similiarElements,
-          isSearch: true,
         },
       };
     case actions.REPOPULATE:
@@ -87,7 +86,6 @@ export default (state = [], action) => {
         toDoList: state.toDoList,
         search: {
           items: state.toDoList,
-          isSearch: true,
         },
       };
     default:

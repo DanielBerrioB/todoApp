@@ -7,17 +7,10 @@ import Task from "../Tasks/Task";
 
 const Main = ({ classes }) => {
   return (
-    <div className={classes.main} id="AppC">
+    <div className={classes.main}>
       <TopOptions />
       <DashBoard />
-      <div
-        style={{
-          backgroundColor: "#FBEAFF",
-          border: "10px",
-        }}
-      >
-        <Task></Task>
-      </div>
+      <Task></Task>
     </div>
   );
 };

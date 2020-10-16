@@ -1,4 +1,4 @@
-const mainStyles = (theme) => ({
+const mainStyles = () => ({
   main: {
     width: "100%",
     heigth: "100%",

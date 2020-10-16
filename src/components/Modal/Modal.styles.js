@@ -11,9 +11,9 @@ const modalStyles = (theme) => ({
     border: "2px solid white",
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
-    top: `50%`,
-    left: `50%`,
-    transform: `translate(-50%, -50%)`,
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
   },
   widthAlert: {
     display: "flex",

@@ -15,7 +15,10 @@ const Tasks = ({ classes }) => {
   const [openError, setOpenError] = useState(false);
   const [errorMessage, setMessage] = useState("");
 
-  const handleCloseModal = () => setOpen(false);
+  const handleCloseModal = () => {
+    setOpen(false);
+    handleCloseError();
+  };
 
   const handleCloseError = () => {
     setOpenError(false);
@@ -25,6 +28,7 @@ const Tasks = ({ classes }) => {
   const handleOpenModal = (element) => {
     setTaskEdit(element);
     setOpen(true);
+    handleCloseError();
   };
 
   const checkTask = (checkElement) => {
@@ -38,7 +42,9 @@ const Tasks = ({ classes }) => {
   };
 
   const onEditTask = (newElement) => {
-    if (!listTask.find((e) => e.title === newElement.title.trim())) {
+    const arrayList = listTask.filter((e) => e.title !== taskEdit.title);
+    const exists = !arrayList.find((e) => e.title === newElement.title.trim());
+    if (exists) {
       newElement.date = new Date().getTime();
       newElement.isDeleted = false;
       newElement.isCompleted = false;
