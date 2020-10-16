@@ -65,8 +65,10 @@ const TopOptions = ({ classes }) => {
   const onSearch = (event) => {
     setSearch(event.target.value);
     setValue("");
-    if (event.target.value.length >= 3) {
-      dispatch(actions.searchElement({ targetText: event.target.value }));
+    if (event.target.value.trim().length >= 3) {
+      dispatch(
+        actions.searchElement({ targetText: event.target.value.trim() })
+      );
     } else {
       dispatch(actions.repopulate());
     }
