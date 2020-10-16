@@ -1,13 +1,12 @@
-const taskStyles = (theme) => ({
-  gridList: {
-    marginTop: "20px",
-  },
+const taskElementStyles = (theme) => ({
   titleTask: {
     textAlign: "center",
+    color: "white",
   },
   itemStyle: {
     backgroundColor: theme.palette.primary.main,
     borderRadius: "5px",
+    height: "200px",
   },
   titleBar: {
     background: "none",
@@ -24,4 +23,4 @@ const taskStyles = (theme) => ({
   },
 });
 
-export default taskStyles;
+export default taskElementStyles;

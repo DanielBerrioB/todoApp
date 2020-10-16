@@ -1,6 +1,9 @@
 import { createMuiTheme } from "@material-ui/core/styles";
 
 export default createMuiTheme({
+  typography: {
+    fontFamily: "'Quicksand', sans-serif",
+  },
   overrides: {
     MuiIconButton: {
       colorPrimary: {

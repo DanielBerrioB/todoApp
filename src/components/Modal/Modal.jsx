@@ -5,15 +5,10 @@ import Modal from "@material-ui/core/Modal";
 import { useForm } from "react-hook-form";
 import { withStyles } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
+import Alert from "@material-ui/lab/Alert";
 
 const ModalComponent = (props) => {
   const { register, handleSubmit, errors } = useForm();
-
-  const handleKeyDown = (e) => {
-    if (e.key === "Enter") {
-      handleSubmit(props.onCreateTask)();
-    }
-  };
 
   return (
     <Modal
@@ -22,7 +17,10 @@ const ModalComponent = (props) => {
       aria-labelledby="simple-modal-title"
       aria-describedby="simple-modal-description"
     >
-      <div className={props.classes.paper}>
+      <form
+        className={props.classes.paper}
+        onSubmit={handleSubmit(props.onHandleAction)}
+      >
         <h2 id="simple-modal-title">
           {props.isEdit ? "Edit this task" : "Add a new task"}
         </h2>
@@ -31,27 +29,29 @@ const ModalComponent = (props) => {
           id="title-new-task"
           label="Title"
           name="title"
+          defaultValue={props.isEdit ? props.taskEdit.title : null}
           error={errors.title ? true : false}
           helperText={
             errors.title
               ? "Your text must be greater than 6 and less than 40 characters"
               : ""
           }
+          placeholder="Title"
           color="secondary"
           inputRef={register({ minLength: 6, maxLength: 40, required: true })}
           InputLabelProps={{ shrink: true }}
           variant="filled"
           type="text"
-          onKeyDown={handleKeyDown}
         />
         <TextField
           className={props.classes.inputStyle}
           id="filled-textarea"
           label="Description"
           name="description"
+          defaultValue={props.isEdit ? props.taskEdit.description : null}
           inputRef={register({
             minLength: 6,
-            maxLength: 200,
+            maxLength: 40,
             required: true,
           })}
           placeholder="Description"
@@ -62,16 +62,23 @@ const ModalComponent = (props) => {
               ? "Your text must be greater than 6 and less than 40 characters"
               : ""
           }
+          InputLabelProps={{ shrink: true }}
           multiline
           variant="filled"
           type="text"
-          onKeyDown={handleKeyDown}
         />
         <br />
-        <Button onClick={handleSubmit(props.onCreateTask)} color="primary">
+        <Button color="primary" type="submit" variant="contained">
           {props.isEdit ? "Edit task" : "Create task"}
         </Button>
-      </div>
+        {props.openError && (
+          <div className={props.classes.widthAlert}>
+            <Alert severity="error" onClose={() => props.closeError()}>
+              {props.errorMessage}
+            </Alert>
+          </div>
+        )}
+      </form>
     </Modal>
   );
 };

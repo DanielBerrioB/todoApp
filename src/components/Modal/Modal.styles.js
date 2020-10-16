@@ -15,6 +15,11 @@ const modalStyles = (theme) => ({
     left: `50%`,
     transform: `translate(-50%, -50%)`,
   },
+  widthAlert: {
+    display: "flex",
+    justifyContent: "center",
+    marginTop: "10px",
+  },
 });
 
 export default modalStyles;

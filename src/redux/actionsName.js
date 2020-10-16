@@ -1,9 +1,15 @@
 const ADD_TASK = "ADD_TASK";
 const UPDATE_TASK = "UPDATE_TASK";
 const REMOVE_TASK = "REMOVE_TASK";
+const CHECK_TASK = "CHECK_TASK";
+const SEARCH = "SEARCH";
+const REPOPULATE = "REPOPULATE";
 
 export default {
   ADD_TASK,
   UPDATE_TASK,
   REMOVE_TASK,
+  CHECK_TASK,
+  SEARCH,
+  REPOPULATE,
 };

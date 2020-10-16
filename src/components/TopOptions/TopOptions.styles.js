@@ -4,6 +4,7 @@ const topOptionsStyles = (theme) => ({
     maxWidth: "500px",
     textAlign: "center",
     display: "flex",
+    justifyContent: "center",
   },
   inputStyle: {
     width: "80%",
@@ -20,6 +21,19 @@ const topOptionsStyles = (theme) => ({
     top: `50%`,
     left: `50%`,
     transform: `translate(-50%, -50%)`,
+  },
+  textSpace: {
+    marginRight: "3px",
+  },
+  labelStyle: {
+    fontSize: "15px",
+    marginBlockStart: "auto",
+    marginBlockEnd: "auto",
+  },
+  resetButton: {
+    textAlign: "center",
+    marginBottom: "5px",
+    marginTop: "5px",
   },
 });
 
